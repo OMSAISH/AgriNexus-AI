@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 800" width="1100" height="800" style="background:#FFFFFF; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+  <rect x="20" y="20" width="1060" height="760" rx="12" fill="#FAFBF8" stroke="#CBD5E1" stroke-width="1.5"/>
+  <text x="40" y="55" font-size="20" font-weight="bold" fill="#174C38">AgriNexus AI — UML Domain Class Diagram</text>
+  <text x="40" y="78" font-size="12" fill="#64748B">Object-Oriented Domain Entities, Field Attributes, Type Signatures and Method Contracts</text>
+
+  <!-- CLASS: User -->
+  <g transform="translate(50, 110)">
+    <rect x="0" y="0" width="200" height="180" rx="4" fill="#FFFFFF" stroke="#0F172A" stroke-width="1.5"/>
+    <rect x="0" y="0" width="200" height="26" rx="4" fill="#0F172A"/>
+    <text x="100" y="18" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">User</text>
+    <text x="10" y="44" font-size="10" fill="#334155">+ id: UUID</text>
+    <text x="10" y="58" font-size="10" fill="#334155">+ email: str</text>
+    <text x="10" y="72" font-size="10" fill="#334155">+ full_name: str</text>
+    <text x="10" y="86" font-size="10" fill="#334155">+ role: UserRoleEnum</text>
+    <text x="10" y="100" font-size="10" fill="#334155">+ is_active: bool</text>
+    <line x1="0" y1="108" x2="200" y2="108" stroke="#CBD5E1"/>
+    <text x="10" y="124" font-size="10" fill="#16845B">+ verify_password(raw): bool</text>
+    <text x="10" y="138" font-size="10" fill="#16845B">+ generate_jwt_token(): str</text>
+    <text x="10" y="152" font-size="10" fill="#16845B">+ has_permission(role): bool</text>
+  </g>
+
+  <!-- CLASS: Farm -->
+  <g transform="translate(320, 110)">
+    <rect x="0" y="0" width="210" height="180" rx="4" fill="#FFFFFF" stroke="#16845B" stroke-width="1.5"/>
+    <rect x="0" y="0" width="210" height="26" rx="4" fill="#16845B"/>
+    <text x="105" y="18" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Farm</text>
+    <text x="10" y="44" font-size="10" fill="#334155">+ id: int</text>
+    <text x="10" y="58" font-size="10" fill="#334155">+ owner_id: UUID</text>
+    <text x="10" y="72" font-size="10" fill="#334155">+ name: str</text>
+    <text x="10" y="86" font-size="10" fill="#334155">+ total_area: Decimal</text>
+    <text x="10" y="100" font-size="10" fill="#334155">+ district: str</text>
+    <line x1="0" y1="108" x2="210" y2="108" stroke="#CBD5E1"/>
+    <text x="10" y="124" font-size="10" fill="#16845B">+ get_allocated_area(): Decimal</text>
+    <text x="10" y="138" font-size="10" fill="#16845B">+ get_remaining_capacity(): Decimal</text>
+    <text x="10" y="152" font-size="10" fill="#16845B">+ validate_field_addition(area): bool</text>
+  </g>
+
+  <!-- CLASS: Field -->
+  <g transform="translate(600, 110)">
+    <rect x="0" y="0" width="210" height="180" rx="4" fill="#FFFFFF" stroke="#16845B" stroke-width="1.5"/>
+    <rect x="0" y="0" width="210" height="26" rx="4" fill="#16845B"/>
+    <text x="105" y="18" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Field</text>
+    <text x="10" y="44" font-size="10" fill="#334155">+ id: int</text>
+    <text x="10" y="58" font-size="10" fill="#334155">+ farm_id: int</text>
+    <text x="10" y="72" font-size="10" fill="#334155">+ name: str</text>
+    <text x="10" y="86" font-size="10" fill="#334155">+ area: Decimal</text>
+    <text x="10" y="100" font-size="10" fill="#334155">+ soil_type: str</text>
+    <line x1="0" y1="108" x2="210" y2="108" stroke="#CBD5E1"/>
+    <text x="10" y="124" font-size="10" fill="#16845B">+ get_current_crop(): Crop</text>
+    <text x="10" y="138" font-size="10" fill="#16845B">+ calculate_water_quota(): float</text>
+    <text x="10" y="152" font-size="10" fill="#16845B">+ get_geojson_boundary(): dict</text>
+  </g>
+
+  <!-- CLASS: Crop -->
+  <g transform="translate(870, 110)">
+    <rect x="0" y="0" width="200" height="180" rx="4" fill="#FFFFFF" stroke="#16845B" stroke-width="1.5"/>
+    <rect x="0" y="0" width="200" height="26" rx="4" fill="#16845B"/>
+    <text x="100" y="18" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Crop</text>
+    <text x="10" y="44" font-size="10" fill="#334155">+ id: int</text>
+    <text x="10" y="58" font-size="10" fill="#334155">+ field_id: int</text>
+    <text x="10" y="72" font-size="10" fill="#334155">+ crop_name: str</text>
+    <text x="10" y="86" font-size="10" fill="#334155">+ growth_stage: str</text>
+    <text x="10" y="100" font-size="10" fill="#334155">+ sowing_date: date</text>
+    <line x1="0" y1="108" x2="200" y2="108" stroke="#CBD5E1"/>
+    <text x="10" y="124" font-size="10" fill="#16845B">+ calculate_gdd(): float</text>
+    <text x="10" y="138" font-size="10" fill="#16845B">+ advance_stage(new_stage): void</text>
+    <text x="10" y="152" font-size="10" fill="#16845B">+ estimate_yield_deviation(): float</text>
+  </g>
+
+  <!-- CLASS: InventoryItem -->
+  <g transform="translate(50, 350)">
+    <rect x="0" y="0" width="210" height="180" rx="4" fill="#FFFFFF" stroke="#0284C7" stroke-width="1.5"/>
+    <rect x="0" y="0" width="210" height="26" rx="4" fill="#0284C7"/>
+    <text x="105" y="18" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">InventoryItem</text>
+    <text x="10" y="44" font-size="10" fill="#334155">+ id: int</text>
+    <text x="10" y="58" font-size="10" fill="#334155">+ farm_id: int</text>
+    <text x="10" y="72" font-size="10" fill="#334155">+ quantity: Decimal</text>
+    <text x="10" y="86" font-size="10" fill="#334155">+ min_stock_threshold: Decimal</text>
+    <text x="10" y="100" font-size="10" fill="#334155">+ unit: str</text>
+    <line x1="0" y1="108" x2="210" y2="108" stroke="#CBD5E1"/>
+    <text x="10" y="124" font-size="10" fill="#0284C7">+ dispense(qty): bool</text>
+    <text x="10" y="138" font-size="10" fill="#0284C7">+ replenish(qty, price): void</text>
+    <text x="10" y="152" font-size="10" fill="#0284C7">+ is_low_stock(): bool</text>
+  </g>
+
+  <!-- CLASS: Labour -->
+  <g transform="translate(320, 350)">
+    <rect x="0" y="0" width="210" height="180" rx="4" fill="#FFFFFF" stroke="#D97706" stroke-width="1.5"/>
+    <rect x="0" y="0" width="210" height="26" rx="4" fill="#D97706"/>
+    <text x="105" y="18" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Labour</text>
+    <text x="10" y="44" font-size="10" fill="#334155">+ id: int</text>
+    <text x="10" y="58" font-size="10" fill="#334155">+ farm_id: int</text>
+    <text x="10" y="72" font-size="10" fill="#334155">+ name: str</text>
+    <text x="10" y="86" font-size="10" fill="#334155">+ daily_wage: Decimal</text>
+    <text x="10" y="100" font-size="10" fill="#334155">+ is_active: bool</text>
+    <line x1="0" y1="108" x2="210" y2="108" stroke="#CBD5E1"/>
+    <text x="10" y="124" font-size="10" fill="#D97706">+ mark_attendance(date, hrs): void</text>
+    <text x="10" y="138" font-size="10" fill="#D97706">+ compute_payroll(month): Decimal</text>
+    <text x="10" y="152" font-size="10" fill="#D97706">+ get_work_history(): list</text>
+  </g>
+
+  <!-- CLASS: Equipment -->
+  <g transform="translate(600, 350)">
+    <rect x="0" y="0" width="210" height="180" rx="4" fill="#FFFFFF" stroke="#475569" stroke-width="1.5"/>
+    <rect x="0" y="0" width="210" height="26" rx="4" fill="#475569"/>
+    <text x="105" y="18" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Equipment</text>
+    <text x="10" y="44" font-size="10" fill="#334155">+ id: int</text>
+    <text x="10" y="58" font-size="10" fill="#334155">+ name: str</text>
+    <text x="10" y="72" font-size="10" fill="#334155">+ category: str</text>
+    <text x="10" y="86" font-size="10" fill="#334155">+ status: str</text>
+    <text x="10" y="100" font-size="10" fill="#334155">+ next_service_date: date</text>
+    <line x1="0" y1="108" x2="210" y2="108" stroke="#CBD5E1"/>
+    <text x="10" y="124" font-size="10" fill="#475569">+ record_service(cost, notes): void</text>
+    <text x="10" y="138" font-size="10" fill="#475569">+ is_service_due(): bool</text>
+    <text x="10" y="152" font-size="10" fill="#475569">+ log_operating_hours(hrs): void</text>
+  </g>
+
+  <!-- CLASS: FinancialTransaction -->
+  <g transform="translate(870, 350)">
+    <rect x="0" y="0" width="200" height="180" rx="4" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.5"/>
+    <rect x="0" y="0" width="200" height="26" rx="4" fill="#16A34A"/>
+    <text x="100" y="18" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">FinancialTransaction</text>
+    <text x="10" y="44" font-size="10" fill="#334155">+ id: int</text>
+    <text x="10" y="58" font-size="10" fill="#334155">+ farm_id: int</text>
+    <text x="10" y="72" font-size="10" fill="#334155">+ transaction_type: str</text>
+    <text x="10" y="86" font-size="10" fill="#334155">+ amount: Decimal</text>
+    <text x="10" y="100" font-size="10" fill="#334155">+ date: date</text>
+    <line x1="0" y1="108" x2="200" y2="108" stroke="#CBD5E1"/>
+    <text x="10" y="124" font-size="10" fill="#16A34A">+ post_to_ledger(): bool</text>
+    <text x="10" y="138" font-size="10" fill="#16A34A">+ categorize_pnl(): str</text>
+    <text x="10" y="152" font-size="10" fill="#16A34A">+ export_voucher(): dict</text>
+  </g>
+
+  <!-- Aggregation & Association Lines -->
+  <!-- User to Farm (1 to 0..*) -->
+  <line x1="250" y1="180" x2="320" y2="180" stroke="#0F172A" stroke-width="1.5"/>
+  <polygon points="320,180 310,175 310,185" fill="#0F172A"/>
+  <text x="255" y="173" font-size="9" fill="#0F172A">1</text>
+  <text x="300" y="173" font-size="9" fill="#0F172A">0..*</text>
+
+  <!-- Farm to Field (Composition: filled diamond) -->
+  <line x1="530" y1="180" x2="600" y2="180" stroke="#0F172A" stroke-width="1.5"/>
+  <polygon points="530,180 540,175 550,180 540,185" fill="#0F172A"/>
+  <text x="555" y="173" font-size="9" fill="#0F172A">1</text>
+  <text x="585" y="173" font-size="9" fill="#0F172A">1..*</text>
+
+  <!-- Field to Crop (Aggregation: open diamond) -->
+  <line x1="810" y1="180" x2="870" y2="180" stroke="#0F172A" stroke-width="1.5"/>
+  <polygon points="810,180 820,175 830,180 820,185" fill="#FFFFFF" stroke="#0F172A" stroke-width="1.2"/>
+  <text x="835" y="173" font-size="9" fill="#0F172A">1</text>
+  <text x="855" y="173" font-size="9" fill="#0F172A">0..*</text>
+
+  <!-- Farm to Inventory, Labour, Equipment -->
+  <line x1="425" y1="290" x2="425" y2="320" stroke="#0F172A" stroke-width="1.2"/>
+  <line x1="155" y1="320" x2="705" y2="320" stroke="#0F172A" stroke-width="1.2"/>
+  <line x1="155" y1="320" x2="155" y2="350" stroke="#0F172A" stroke-width="1.2"/>
+  <line x1="425" y1="320" x2="425" y2="350" stroke="#0F172A" stroke-width="1.2"/>
+  <line x1="705" y1="320" x2="705" y2="350" stroke="#0F172A" stroke-width="1.2"/>
+</svg>

@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="1000" height="600" style="background:#FFFFFF; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+  <rect x="20" y="20" width="960" height="560" rx="12" fill="#FAFBF8" stroke="#CBD5E1" stroke-width="1.5"/>
+  <text x="40" y="55" font-size="20" font-weight="bold" fill="#174C38">AgriNexus AI — Multi-Tier System Architecture</text>
+  <text x="40" y="78" font-size="12" fill="#64748B">End-to-End Enterprise Agricultural Technology Platform Topology</text>
+  
+  <!-- Tier 1: Client Layer -->
+  <rect x="50" y="110" width="260" height="430" rx="8" fill="#FFFFFF" stroke="#16845B" stroke-width="2"/>
+  <rect x="50" y="110" width="260" height="40" rx="8" fill="#16845B"/>
+  <text x="70" y="135" font-size="14" font-weight="bold" fill="#FFFFFF">CLIENT PRESENTATION TIER</text>
+  <text x="70" y="175" font-size="12" font-weight="bold" fill="#172B24">Angular 22 Standalone Application</text>
+  <rect x="70" y="190" width="220" height="35" rx="4" fill="#E8F2EA" stroke="#16845B"/>
+  <text x="80" y="212" font-size="11" fill="#174C38">App Shell &amp; Sidebar Navigation</text>
+  <rect x="70" y="235" width="220" height="35" rx="4" fill="#E8F2EA" stroke="#16845B"/>
+  <text x="80" y="257" font-size="11" fill="#174C38">Feature Modules (Crops, Fields, Stock)</text>
+  <rect x="70" y="280" width="220" height="35" rx="4" fill="#E8F2EA" stroke="#16845B"/>
+  <text x="80" y="302" font-size="11" fill="#174C38">Apache ECharts Visualizations</text>
+  <rect x="70" y="325" width="220" height="35" rx="4" fill="#E8F2EA" stroke="#16845B"/>
+  <text x="80" y="347" font-size="11" fill="#174C38">Leaflet GIS Parcel Maps</text>
+  <rect x="70" y="370" width="220" height="35" rx="4" fill="#E8F2EA" stroke="#16845B"/>
+  <text x="80" y="392" font-size="11" fill="#174C38">RxJS Reactive State &amp; Interceptors</text>
+  <rect x="70" y="415" width="220" height="35" rx="4" fill="#E8F2EA" stroke="#16845B"/>
+  <text x="80" y="437" font-size="11" fill="#174C38">JWT Local Storage Session Store</text>
+
+  <!-- Connectors -->
+  <line x1="310" y1="320" x2="370" y2="320" stroke="#16845B" stroke-width="2.5" stroke-dasharray="4"/>
+  <polygon points="370,315 380,320 370,325" fill="#16845B"/>
+  <text x="315" y="305" font-size="10" fill="#174C38">HTTPS / REST</text>
+  <text x="320" y="340" font-size="10" fill="#64748B">JSON / JWT</text>
+
+  <!-- Tier 2: Application / API Layer -->
+  <rect x="380" y="110" width="280" height="430" rx="8" fill="#FFFFFF" stroke="#174C38" stroke-width="2"/>
+  <rect x="380" y="110" width="280" height="40" rx="8" fill="#174C38"/>
+  <text x="400" y="135" font-size="14" font-weight="bold" fill="#FFFFFF">BACKEND APPLICATION TIER</text>
+  <text x="400" y="175" font-size="12" font-weight="bold" fill="#172B24">FastAPI ASGI Service (Python 3.11+)</text>
+  <rect x="400" y="190" width="240" height="35" rx="4" fill="#F1F5F9" stroke="#94A3B8"/>
+  <text x="410" y="212" font-size="11" fill="#0F172A">OAuth2 Password Bearer / JWT Auth</text>
+  <rect x="400" y="235" width="240" height="35" rx="4" fill="#F1F5F9" stroke="#94A3B8"/>
+  <text x="410" y="257" font-size="11" fill="#0F172A">Farm &amp; Parcel Area Guard Service</text>
+  <rect x="400" y="280" width="240" height="35" rx="4" fill="#F1F5F9" stroke="#94A3B8"/>
+  <text x="410" y="302" font-size="11" fill="#0F172A">Inventory Stock Inward/Outward Ledger</text>
+  <rect x="400" y="325" width="240" height="35" rx="4" fill="#F1F5F9" stroke="#94A3B8"/>
+  <text x="410" y="347" font-size="11" fill="#0F172A">Labour Muster &amp; Wage Auto-Compute</text>
+  <rect x="400" y="370" width="240" height="35" rx="4" fill="#F1F5F9" stroke="#94A3B8"/>
+  <text x="410" y="392" font-size="11" fill="#0F172A">Phenology Growth Stage Pipeline</text>
+  <rect x="400" y="415" width="240" height="35" rx="4" fill="#F1F5F9" stroke="#94A3B8"/>
+  <text x="410" y="437" font-size="11" fill="#0F172A">SQLAlchemy 2.0 ORM &amp; Alembic</text>
+  <rect x="400" y="460" width="240" height="35" rx="4" fill="#F1F5F9" stroke="#94A3B8"/>
+  <text x="410" y="482" font-size="11" fill="#0F172A">Automated Audit Logging &amp; CORS</text>
+
+  <!-- Connectors -->
+  <line x1="660" y1="320" x2="710" y2="320" stroke="#174C38" stroke-width="2.5"/>
+  <polygon points="710,315 720,320 710,325" fill="#174C38"/>
+  <text x="665" y="305" font-size="10" fill="#174C38">TCP 5433</text>
+  <text x="665" y="340" font-size="10" fill="#64748B">psycopg2</text>
+
+  <!-- Tier 3: Persistence Layer -->
+  <rect x="720" y="110" width="240" height="430" rx="8" fill="#FFFFFF" stroke="#0F172A" stroke-width="2"/>
+  <rect x="720" y="110" width="240" height="40" rx="8" fill="#0F172A"/>
+  <text x="735" y="135" font-size="14" font-weight="bold" fill="#FFFFFF">PERSISTENCE TIER</text>
+  <text x="735" y="175" font-size="12" font-weight="bold" fill="#172B24">PostgreSQL 18 Relational DB</text>
+  <rect x="735" y="190" width="210" height="35" rx="4" fill="#F8FAFC" stroke="#CBD5E1"/>
+  <text x="745" y="212" font-size="11" fill="#334155">users &amp; roles (RBAC)</text>
+  <rect x="735" y="235" width="210" height="35" rx="4" fill="#F8FAFC" stroke="#CBD5E1"/>
+  <text x="745" y="257" font-size="11" fill="#334155">farms, fields &amp; crops</text>
+  <rect x="735" y="280" width="210" height="35" rx="4" fill="#F8FAFC" stroke="#CBD5E1"/>
+  <text x="745" y="302" font-size="11" fill="#334155">inventory_items &amp; transactions</text>
+  <rect x="735" y="325" width="210" height="35" rx="4" fill="#F8FAFC" stroke="#CBD5E1"/>
+  <text x="745" y="347" font-size="11" fill="#334155">labour &amp; labour_attendance</text>
+  <rect x="735" y="370" width="210" height="35" rx="4" fill="#F8FAFC" stroke="#CBD5E1"/>
+  <text x="745" y="392" font-size="11" fill="#334155">equipment &amp; maintenance</text>
+  <rect x="735" y="415" width="210" height="35" rx="4" fill="#F8FAFC" stroke="#CBD5E1"/>
+  <text x="745" y="437" font-size="11" fill="#334155">financial_transactions (P&amp;L)</text>
+  <rect x="735" y="460" width="210" height="35" rx="4" fill="#F8FAFC" stroke="#CBD5E1"/>
+  <text x="745" y="482" font-size="11" fill="#334155">audit_logs &amp; notifications</text>
+</svg>

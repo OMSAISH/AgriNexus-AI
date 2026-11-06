@@ -1,0 +1,216 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" style="background:#FFFFFF; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+  <rect x="20" y="20" width="1160" height="860" rx="12" fill="#FAFBF8" stroke="#CBD5E1" stroke-width="1.5"/>
+  <text x="40" y="55" font-size="20" font-weight="bold" fill="#174C38">AgriNexus AI — Comprehensive Entity-Relationship Diagram (ERD)</text>
+  <text x="40" y="78" font-size="12" fill="#64748B">Relational Schema Covering 21 Tables with Foreign Keys, Normal Forms &amp; Referential Integrity</text>
+
+  <!-- TABLE: users -->
+  <g transform="translate(50, 110)">
+    <rect x="0" y="0" width="190" height="150" rx="4" fill="#FFFFFF" stroke="#16845B" stroke-width="1.5"/>
+    <rect x="0" y="0" width="190" height="26" rx="4" fill="#16845B"/>
+    <text x="95" y="18" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">users</text>
+    <text x="10" y="44" font-size="10" font-weight="bold" fill="#0F172A">PK  id: UUID</text>
+    <text x="10" y="60" font-size="10" fill="#334155">email: VARCHAR (UQ)</text>
+    <text x="10" y="76" font-size="10" fill="#334155">hashed_password: TEXT</text>
+    <text x="10" y="92" font-size="10" fill="#334155">full_name: VARCHAR</text>
+    <text x="10" y="108" font-size="10" fill="#334155">phone_number: VARCHAR</text>
+    <text x="10" y="124" font-size="10" fill="#334155">role: UserRoleEnum</text>
+    <text x="10" y="140" font-size="10" fill="#334155">created_at: TIMESTAMP</text>
+  </g>
+
+  <!-- TABLE: farms -->
+  <g transform="translate(300, 110)">
+    <rect x="0" y="0" width="190" height="150" rx="4" fill="#FFFFFF" stroke="#16845B" stroke-width="1.5"/>
+    <rect x="0" y="0" width="190" height="26" rx="4" fill="#16845B"/>
+    <text x="95" y="18" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">farms</text>
+    <text x="10" y="44" font-size="10" font-weight="bold" fill="#0F172A">PK  id: INTEGER</text>
+    <text x="10" y="60" font-size="10" fill="#2563EB">FK  owner_id: UUID</text>
+    <text x="10" y="76" font-size="10" fill="#334155">name: VARCHAR(100)</text>
+    <text x="10" y="92" font-size="10" fill="#334155">total_area: NUMERIC(10,2)</text>
+    <text x="10" y="108" font-size="10" fill="#334155">area_unit: VARCHAR(10)</text>
+    <text x="10" y="124" font-size="10" fill="#334155">district: VARCHAR(50)</text>
+    <text x="10" y="140" font-size="10" fill="#334155">state: VARCHAR(50)</text>
+  </g>
+
+  <!-- TABLE: fields -->
+  <g transform="translate(550, 110)">
+    <rect x="0" y="0" width="190" height="150" rx="4" fill="#FFFFFF" stroke="#16845B" stroke-width="1.5"/>
+    <rect x="0" y="0" width="190" height="26" rx="4" fill="#16845B"/>
+    <text x="95" y="18" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">fields</text>
+    <text x="10" y="44" font-size="10" font-weight="bold" fill="#0F172A">PK  id: INTEGER</text>
+    <text x="10" y="60" font-size="10" fill="#2563EB">FK  farm_id: INTEGER</text>
+    <text x="10" y="76" font-size="10" fill="#334155">name: VARCHAR(100)</text>
+    <text x="10" y="92" font-size="10" fill="#334155">area: NUMERIC(10,2)</text>
+    <text x="10" y="108" font-size="10" fill="#334155">soil_type: VARCHAR(50)</text>
+    <text x="10" y="124" font-size="10" fill="#334155">irrigation_type: VARCHAR(50)</text>
+    <text x="10" y="140" font-size="10" fill="#334155">coordinates: JSONB</text>
+  </g>
+
+  <!-- TABLE: crops -->
+  <g transform="translate(800, 110)">
+    <rect x="0" y="0" width="200" height="165" rx="4" fill="#FFFFFF" stroke="#16845B" stroke-width="1.5"/>
+    <rect x="0" y="0" width="200" height="26" rx="4" fill="#16845B"/>
+    <text x="100" y="18" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">crops</text>
+    <text x="10" y="44" font-size="10" font-weight="bold" fill="#0F172A">PK  id: INTEGER</text>
+    <text x="10" y="60" font-size="10" fill="#2563EB">FK  field_id: INTEGER</text>
+    <text x="10" y="76" font-size="10" fill="#334155">crop_name: VARCHAR(50)</text>
+    <text x="10" y="92" font-size="10" fill="#334155">variety: VARCHAR(50)</text>
+    <text x="10" y="108" font-size="10" fill="#334155">growth_stage: VARCHAR(30)</text>
+    <text x="10" y="124" font-size="10" fill="#334155">expected_yield: NUMERIC(8,2)</text>
+    <text x="10" y="140" font-size="10" fill="#334155">actual_yield: NUMERIC(8,2)</text>
+    <text x="10" y="156" font-size="10" fill="#334155">sowing_date: DATE</text>
+  </g>
+
+  <!-- TABLE: inventory_items -->
+  <g transform="translate(50, 310)">
+    <rect x="0" y="0" width="190" height="150" rx="4" fill="#FFFFFF" stroke="#0284C7" stroke-width="1.5"/>
+    <rect x="0" y="0" width="190" height="26" rx="4" fill="#0284C7"/>
+    <text x="95" y="18" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">inventory_items</text>
+    <text x="10" y="44" font-size="10" font-weight="bold" fill="#0F172A">PK  id: INTEGER</text>
+    <text x="10" y="60" font-size="10" fill="#2563EB">FK  farm_id: INTEGER</text>
+    <text x="10" y="76" font-size="10" fill="#334155">name: VARCHAR(100)</text>
+    <text x="10" y="92" font-size="10" fill="#334155">category: VARCHAR(50)</text>
+    <text x="10" y="108" font-size="10" fill="#334155">quantity: NUMERIC(10,2)</text>
+    <text x="10" y="124" font-size="10" fill="#334155">unit: VARCHAR(20)</text>
+    <text x="10" y="140" font-size="10" fill="#334155">unit_price: NUMERIC(10,2)</text>
+  </g>
+
+  <!-- TABLE: inventory_transactions -->
+  <g transform="translate(300, 310)">
+    <rect x="0" y="0" width="200" height="150" rx="4" fill="#FFFFFF" stroke="#0284C7" stroke-width="1.5"/>
+    <rect x="0" y="0" width="200" height="26" rx="4" fill="#0284C7"/>
+    <text x="100" y="18" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">inventory_transactions</text>
+    <text x="10" y="44" font-size="10" font-weight="bold" fill="#0F172A">PK  id: INTEGER</text>
+    <text x="10" y="60" font-size="10" fill="#2563EB">FK  item_id: INTEGER</text>
+    <text x="10" y="76" font-size="10" fill="#334155">transaction_type: VARCHAR</text>
+    <text x="10" y="92" font-size="10" fill="#334155">quantity: NUMERIC(10,2)</text>
+    <text x="10" y="108" font-size="10" fill="#334155">unit_price: NUMERIC(10,2)</text>
+    <text x="10" y="124" font-size="10" fill="#334155">total_cost: NUMERIC(12,2)</text>
+    <text x="10" y="140" font-size="10" fill="#334155">created_at: TIMESTAMP</text>
+  </g>
+
+  <!-- TABLE: labour -->
+  <g transform="translate(550, 310)">
+    <rect x="0" y="0" width="190" height="150" rx="4" fill="#FFFFFF" stroke="#D97706" stroke-width="1.5"/>
+    <rect x="0" y="0" width="190" height="26" rx="4" fill="#D97706"/>
+    <text x="95" y="18" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">labour</text>
+    <text x="10" y="44" font-size="10" font-weight="bold" fill="#0F172A">PK  id: INTEGER</text>
+    <text x="10" y="60" font-size="10" fill="#2563EB">FK  farm_id: INTEGER</text>
+    <text x="10" y="76" font-size="10" fill="#334155">name: VARCHAR(100)</text>
+    <text x="10" y="92" font-size="10" fill="#334155">contact_phone: VARCHAR</text>
+    <text x="10" y="108" font-size="10" fill="#334155">daily_wage: NUMERIC(8,2)</text>
+    <text x="10" y="124" font-size="10" fill="#334155">skill_type: VARCHAR(50)</text>
+    <text x="10" y="140" font-size="10" fill="#334155">is_active: BOOLEAN</text>
+  </g>
+
+  <!-- TABLE: labour_attendance -->
+  <g transform="translate(800, 310)">
+    <rect x="0" y="0" width="200" height="150" rx="4" fill="#FFFFFF" stroke="#D97706" stroke-width="1.5"/>
+    <rect x="0" y="0" width="200" height="26" rx="4" fill="#D97706"/>
+    <text x="100" y="18" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">labour_attendance</text>
+    <text x="10" y="44" font-size="10" font-weight="bold" fill="#0F172A">PK  id: INTEGER</text>
+    <text x="10" y="60" font-size="10" fill="#2563EB">FK  labour_id: INTEGER</text>
+    <text x="10" y="76" font-size="10" fill="#334155">date: DATE</text>
+    <text x="10" y="92" font-size="10" fill="#334155">status: VARCHAR(20)</text>
+    <text x="10" y="108" font-size="10" fill="#334155">hours_worked: NUMERIC(4,1)</text>
+    <text x="10" y="124" font-size="10" fill="#334155">wage_paid: NUMERIC(8,2)</text>
+    <text x="10" y="140" font-size="10" fill="#334155">payment_status: VARCHAR</text>
+  </g>
+
+  <!-- TABLE: equipment -->
+  <g transform="translate(50, 500)">
+    <rect x="0" y="0" width="190" height="150" rx="4" fill="#FFFFFF" stroke="#475569" stroke-width="1.5"/>
+    <rect x="0" y="0" width="190" height="26" rx="4" fill="#475569"/>
+    <text x="95" y="18" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">equipment</text>
+    <text x="10" y="44" font-size="10" font-weight="bold" fill="#0F172A">PK  id: INTEGER</text>
+    <text x="10" y="60" font-size="10" fill="#2563EB">FK  farm_id: INTEGER</text>
+    <text x="10" y="76" font-size="10" fill="#334155">name: VARCHAR(100)</text>
+    <text x="10" y="92" font-size="10" fill="#334155">category: VARCHAR(50)</text>
+    <text x="10" y="108" font-size="10" fill="#334155">purchase_cost: NUMERIC(10,2)</text>
+    <text x="10" y="124" font-size="10" fill="#334155">status: VARCHAR(30)</text>
+    <text x="10" y="140" font-size="10" fill="#334155">next_service_date: DATE</text>
+  </g>
+
+  <!-- TABLE: financial_transactions -->
+  <g transform="translate(300, 500)">
+    <rect x="0" y="0" width="200" height="150" rx="4" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.5"/>
+    <rect x="0" y="0" width="200" height="26" rx="4" fill="#16A34A"/>
+    <text x="100" y="18" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">financial_transactions</text>
+    <text x="10" y="44" font-size="10" font-weight="bold" fill="#0F172A">PK  id: INTEGER</text>
+    <text x="10" y="60" font-size="10" fill="#2563EB">FK  farm_id: INTEGER</text>
+    <text x="10" y="76" font-size="10" fill="#334155">transaction_type: VARCHAR</text>
+    <text x="10" y="92" font-size="10" fill="#334155">category: VARCHAR(50)</text>
+    <text x="10" y="108" font-size="10" fill="#334155">amount: NUMERIC(12,2)</text>
+    <text x="10" y="124" font-size="10" fill="#334155">date: DATE</text>
+    <text x="10" y="140" font-size="10" fill="#334155">payment_method: VARCHAR</text>
+  </g>
+
+  <!-- TABLE: farm_activities -->
+  <g transform="translate(550, 500)">
+    <rect x="0" y="0" width="190" height="150" rx="4" fill="#FFFFFF" stroke="#9333EA" stroke-width="1.5"/>
+    <rect x="0" y="0" width="190" height="26" rx="4" fill="#9333EA"/>
+    <text x="95" y="18" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">farm_activities</text>
+    <text x="10" y="44" font-size="10" font-weight="bold" fill="#0F172A">PK  id: INTEGER</text>
+    <text x="10" y="60" font-size="10" fill="#2563EB">FK  farm_id / field_id</text>
+    <text x="10" y="76" font-size="10" fill="#334155">activity_type: VARCHAR</text>
+    <text x="10" y="92" font-size="10" fill="#334155">scheduled_date: DATE</text>
+    <text x="10" y="108" font-size="10" fill="#334155">status: VARCHAR(20)</text>
+    <text x="10" y="124" font-size="10" fill="#334155">assigned_to: INTEGER</text>
+    <text x="10" y="140" font-size="10" fill="#334155">notes: TEXT</text>
+  </g>
+
+  <!-- TABLE: disease_diagnoses -->
+  <g transform="translate(800, 500)">
+    <rect x="0" y="0" width="200" height="150" rx="4" fill="#FFFFFF" stroke="#E11D48" stroke-width="1.5"/>
+    <rect x="0" y="0" width="200" height="26" rx="4" fill="#E11D48"/>
+    <text x="100" y="18" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">disease_diagnoses</text>
+    <text x="10" y="44" font-size="10" font-weight="bold" fill="#0F172A">PK  id: INTEGER</text>
+    <text x="10" y="60" font-size="10" fill="#2563EB">FK  field_id: INTEGER</text>
+    <text x="10" y="76" font-size="10" fill="#334155">crop_type: VARCHAR(50)</text>
+    <text x="10" y="92" font-size="10" fill="#334155">disease_name: VARCHAR(100)</text>
+    <text x="10" y="108" font-size="10" fill="#334155">confidence: NUMERIC(5,2)</text>
+    <text x="10" y="124" font-size="10" fill="#334155">treatment_plan: JSONB</text>
+    <text x="10" y="140" font-size="10" fill="#334155">diagnosed_at: TIMESTAMP</text>
+  </g>
+
+  <!-- Relation Lines -->
+  <!-- users -> farms (1:N) -->
+  <line x1="240" y1="180" x2="300" y2="180" stroke="#0F172A" stroke-width="1.5"/>
+  <circle cx="243" cy="180" r="3" fill="#0F172A"/>
+  <text x="270" y="173" font-size="9" fill="#0F172A">1:N</text>
+
+  <!-- farms -> fields (1:N) -->
+  <line x1="490" y1="180" x2="550" y2="180" stroke="#0F172A" stroke-width="1.5"/>
+  <circle cx="493" cy="180" r="3" fill="#0F172A"/>
+  <text x="520" y="173" font-size="9" fill="#0F172A">1:N</text>
+
+  <!-- fields -> crops (1:N) -->
+  <line x1="740" y1="180" x2="800" y2="180" stroke="#0F172A" stroke-width="1.5"/>
+  <circle cx="743" cy="180" r="3" fill="#0F172A"/>
+  <text x="770" y="173" font-size="9" fill="#0F172A">1:N</text>
+
+  <!-- farms -> inventory_items (1:N) -->
+  <line x1="395" y1="260" x2="395" y2="285" stroke="#0F172A" stroke-width="1.5"/>
+  <line x1="395" y1="285" x2="145" y2="285" stroke="#0F172A" stroke-width="1.5"/>
+  <line x1="145" y1="285" x2="145" y2="310" stroke="#0F172A" stroke-width="1.5"/>
+
+  <!-- inventory_items -> inventory_transactions (1:N) -->
+  <line x1="240" y1="380" x2="300" y2="380" stroke="#0F172A" stroke-width="1.5"/>
+  <circle cx="243" cy="380" r="3" fill="#0F172A"/>
+  <text x="270" y="373" font-size="9" fill="#0F172A">1:N</text>
+
+  <!-- labour -> labour_attendance (1:N) -->
+  <line x1="740" y1="380" x2="800" y2="380" stroke="#0F172A" stroke-width="1.5"/>
+  <circle cx="743" cy="380" r="3" fill="#0F172A"/>
+  <text x="770" y="373" font-size="9" fill="#0F172A">1:N</text>
+
+  <!-- Footnote -->
+  <text x="50" y="720" font-size="11" font-weight="bold" fill="#334155">Additional Architectural Schema Tables:</text>
+  <text x="50" y="740" font-size="10" fill="#64748B">• user_roles &amp; roles (RBAC association table)</text>
+  <text x="50" y="756" font-size="10" fill="#64748B">• crop_cycles (Agronomic phase timeline records)</text>
+  <text x="50" y="772" font-size="10" fill="#64748B">• equipment_maintenance (Service logs, oil change &amp; part expenses)</text>
+  <text x="400" y="740" font-size="10" fill="#64748B">• soil_records (pH, N-P-K, electrical conductivity history)</text>
+  <text x="400" y="756" font-size="10" fill="#64748B">• irrigation_records (Water volume m³, pump run hours, valve state)</text>
+  <text x="400" y="772" font-size="10" fill="#64748B">• notifications (Event triggers, low-stock, frost &amp; rain alerts)</text>
+  <text x="750" y="740" font-size="10" fill="#64748B">• audit_logs (Security and admin compliance tracking)</text>
+  <text x="750" y="756" font-size="10" fill="#64748B">• market_prices (Historical APMC mandi price cache)</text>
+</svg>

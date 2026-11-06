@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" style="background:#FFFFFF; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+  <rect x="10" y="10" width="940" height="520" rx="10" fill="#FAFBF8" stroke="#CBD5E1" stroke-width="1.5"/>
+  <text x="30" y="45" font-size="18" font-weight="bold" fill="#174C38">AgriNexus AI — UML Use-Case Diagram</text>
+  <text x="30" y="68" font-size="12" fill="#64748B">Actors, Boundary, and Core Functional Capabilities</text>
+
+  <!-- System Boundary -->
+  <rect x="220" y="90" width="520" height="420" rx="8" fill="#FFFFFF" stroke="#16845B" stroke-width="2"/>
+  <text x="240" y="115" font-size="12" font-weight="bold" fill="#16845B">AgriNexus AI Application Boundary</text>
+
+  <!-- Actor: Farmer -->
+  <circle cx="100" cy="200" r="20" fill="#E8F2EA" stroke="#174C38" stroke-width="2"/>
+  <line x1="100" y1="220" x2="100" y2="270" stroke="#174C38" stroke-width="2"/>
+  <line x1="70" y1="240" x2="130" y2="240" stroke="#174C38" stroke-width="2"/>
+  <line x1="100" y1="270" x2="80" y2="320" stroke="#174C38" stroke-width="2"/>
+  <line x1="100" y1="270" x2="120" y2="320" stroke="#174C38" stroke-width="2"/>
+  <text x="60" y="345" font-size="12" font-weight="bold" fill="#172B24">Farmer / Owner</text>
+
+  <!-- Actor: Agronomist / CHC -->
+  <circle cx="860" cy="200" r="20" fill="#E8F2EA" stroke="#174C38" stroke-width="2"/>
+  <line x1="860" y1="220" x2="860" y2="270" stroke="#174C38" stroke-width="2"/>
+  <line x1="830" y1="240" x2="890" y2="240" stroke="#174C38" stroke-width="2"/>
+  <line x1="860" y1="270" x2="840" y2="320" stroke="#174C38" stroke-width="2"/>
+  <line x1="860" y1="270" x2="880" y2="320" stroke="#174C38" stroke-width="2"/>
+  <text x="815" y="345" font-size="12" font-weight="bold" fill="#172B24">Agronomist / Admin</text>
+
+  <!-- Use Cases (Ellipses) -->
+  <g transform="translate(250, 130)">
+    <ellipse cx="120" cy="25" rx="110" ry="20" fill="#E8F2EA" stroke="#16845B" stroke-width="1.5"/>
+    <text x="55" y="29" font-size="11" font-weight="bold" fill="#174C38">Manage Farm Holdings &amp; Parcels</text>
+  </g>
+  <g transform="translate(250, 185)">
+    <ellipse cx="120" cy="25" rx="110" ry="20" fill="#E8F2EA" stroke="#16845B" stroke-width="1.5"/>
+    <text x="50" y="29" font-size="11" font-weight="bold" fill="#174C38">Track Crop Phenology Lifecycle</text>
+  </g>
+  <g transform="translate(250, 240)">
+    <ellipse cx="120" cy="25" rx="110" ry="20" fill="#E8F2EA" stroke="#16845B" stroke-width="1.5"/>
+    <text x="60" y="29" font-size="11" font-weight="bold" fill="#174C38">Log Input Stock (In/Outward)</text>
+  </g>
+  <g transform="translate(250, 295)">
+    <ellipse cx="120" cy="25" rx="110" ry="20" fill="#E8F2EA" stroke="#16845B" stroke-width="1.5"/>
+    <text x="45" y="29" font-size="11" font-weight="bold" fill="#174C38">Record Attendance &amp; Compute Wages</text>
+  </g>
+  <g transform="translate(250, 350)">
+    <ellipse cx="120" cy="25" rx="110" ry="20" fill="#E8F2EA" stroke="#16845B" stroke-width="1.5"/>
+    <text x="55" y="29" font-size="11" font-weight="bold" fill="#174C38">Manage Fleet &amp; Maintenance</text>
+  </g>
+  <g transform="translate(250, 405)">
+    <ellipse cx="120" cy="25" rx="110" ry="20" fill="#E8F2EA" stroke="#16845B" stroke-width="1.5"/>
+    <text x="65" y="29" font-size="11" font-weight="bold" fill="#174C38">Inspect P&amp;L Financial Ledger</text>
+  </g>
+  <g transform="translate(250, 460)">
+    <ellipse cx="120" cy="25" rx="110" ry="20" fill="#E8F2EA" stroke="#16845B" stroke-width="1.5"/>
+    <text x="50" y="29" font-size="11" font-weight="bold" fill="#174C38">AI Crop Pathology Diagnosis</text>
+  </g>
+
+  <!-- Connectors -->
+  <line x1="130" y1="230" x2="260" y2="155" stroke="#174C38" stroke-width="1.2"/>
+  <line x1="130" y1="240" x2="260" y2="210" stroke="#174C38" stroke-width="1.2"/>
+  <line x1="130" y1="250" x2="260" y2="265" stroke="#174C38" stroke-width="1.2"/>
+  <line x1="130" y1="260" x2="260" y2="320" stroke="#174C38" stroke-width="1.2"/>
+  <line x1="130" y1="270" x2="260" y2="375" stroke="#174C38" stroke-width="1.2"/>
+  <line x1="130" y1="280" x2="260" y2="430" stroke="#174C38" stroke-width="1.2"/>
+
+  <line x1="830" y1="240" x2="480" y2="155" stroke="#16845B" stroke-width="1.2" stroke-dasharray="3"/>
+  <line x1="830" y1="250" x2="480" y2="375" stroke="#16845B" stroke-width="1.2" stroke-dasharray="3"/>
+  <line x1="830" y1="260" x2="480" y2="485" stroke="#16845B" stroke-width="1.2" stroke-dasharray="3"/>
+</svg>

@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1150 780" width="1150" height="780" style="background:#FFFFFF; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+  <rect x="20" y="20" width="1110" height="740" rx="12" fill="#FAFBF8" stroke="#CBD5E1" stroke-width="1.5"/>
+  <text x="40" y="55" font-size="20" font-weight="bold" fill="#174C38">AgriNexus AI — Angular 22 Component Hierarchy</text>
+  <text x="40" y="78" font-size="12" fill="#64748B">Standalone Component Architecture, Routing Outlets &amp; Dependency Injection Graph</text>
+
+  <!-- Root: AppComponent -->
+  <rect x="475" y="110" width="200" height="45" rx="6" fill="#1E293B" stroke="#0F172A" stroke-width="2"/>
+  <text x="575" y="137" font-size="13" font-weight="bold" fill="#FFFFFF" text-anchor="middle">AppComponent (Root)</text>
+
+  <!-- Intermediate: AppLayoutComponent -->
+  <rect x="460" y="200" width="230" height="50" rx="6" fill="#16845B" stroke="#174C38" stroke-width="2"/>
+  <text x="575" y="225" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">AppLayoutComponent</text>
+  <text x="575" y="240" font-size="10" fill="#E8F2EA" text-anchor="middle">(Master Application Shell)</text>
+
+  <!-- Shell Subcomponents -->
+  <rect x="180" y="290" width="170" height="40" rx="4" fill="#E8F2EA" stroke="#16845B" stroke-width="1.5"/>
+  <text x="265" y="315" font-size="11" font-weight="bold" fill="#174C38" text-anchor="middle">SidebarComponent</text>
+
+  <rect x="380" y="290" width="170" height="40" rx="4" fill="#E8F2EA" stroke="#16845B" stroke-width="1.5"/>
+  <text x="465" y="315" font-size="11" font-weight="bold" fill="#174C38" text-anchor="middle">NavbarComponent</text>
+
+  <rect x="580" y="290" width="190" height="40" rx="4" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="675" y="315" font-size="11" font-weight="bold" fill="#991B1B" text-anchor="middle">&lt;router-outlet&gt;</text>
+
+  <rect x="800" y="290" width="170" height="40" rx="4" fill="#E8F2EA" stroke="#16845B" stroke-width="1.5"/>
+  <text x="885" y="315" font-size="11" font-weight="bold" fill="#174C38" text-anchor="middle">NotificationToast</text>
+
+  <!-- Feature Routed Components under router-outlet -->
+  <g transform="translate(40, 390)">
+    <!-- Dashboard -->
+    <rect x="0" y="0" width="150" height="60" rx="4" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <text x="75" y="26" font-size="11" font-weight="bold" fill="#0F172A" text-anchor="middle">Dashboard</text>
+    <text x="75" y="44" font-size="9" fill="#64748B" text-anchor="middle">ECharts &amp; KPI Cards</text>
+
+    <!-- Farms -->
+    <rect x="165" y="0" width="150" height="60" rx="4" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <text x="240" y="26" font-size="11" font-weight="bold" fill="#0F172A" text-anchor="middle">FarmsView</text>
+    <text x="240" y="44" font-size="9" fill="#64748B" text-anchor="middle">FarmCards + Modal</text>
+
+    <!-- Fields -->
+    <rect x="330" y="0" width="150" height="60" rx="4" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <text x="405" y="26" font-size="11" font-weight="bold" fill="#0F172A" text-anchor="middle">FieldsView</text>
+    <text x="405" y="44" font-size="9" fill="#64748B" text-anchor="middle">Leaflet Map + Quota</text>
+
+    <!-- Crops -->
+    <rect x="495" y="0" width="150" height="60" rx="4" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <text x="570" y="26" font-size="11" font-weight="bold" fill="#0F172A" text-anchor="middle">CropLifecycle</text>
+    <text x="570" y="44" font-size="9" fill="#64748B" text-anchor="middle">Phenology Stepper</text>
+
+    <!-- Inventory -->
+    <rect x="660" y="0" width="150" height="60" rx="4" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <text x="735" y="26" font-size="11" font-weight="bold" fill="#0F172A" text-anchor="middle">InventoryView</text>
+    <text x="735" y="44" font-size="9" fill="#64748B" text-anchor="middle">Stock Table + Ledger</text>
+
+    <!-- Labour -->
+    <rect x="825" y="0" width="150" height="60" rx="4" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <text x="900" y="26" font-size="11" font-weight="bold" fill="#0F172A" text-anchor="middle">LabourView</text>
+    <text x="900" y="44" font-size="9" fill="#64748B" text-anchor="middle">Attendance + Wages</text>
+  </g>
+
+  <g transform="translate(40, 480)">
+    <!-- Equipment -->
+    <rect x="0" y="0" width="150" height="60" rx="4" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <text x="75" y="26" font-size="11" font-weight="bold" fill="#0F172A" text-anchor="middle">EquipmentView</text>
+    <text x="75" y="44" font-size="9" fill="#64748B" text-anchor="middle">Service Log &amp; Status</text>
+
+    <!-- Activities -->
+    <rect x="165" y="0" width="150" height="60" rx="4" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <text x="240" y="26" font-size="11" font-weight="bold" fill="#0F172A" text-anchor="middle">ActivitiesView</text>
+    <text x="240" y="44" font-size="9" fill="#64748B" text-anchor="middle">Gantt &amp; Task Roster</text>
+
+    <!-- Financials -->
+    <rect x="330" y="0" width="150" height="60" rx="4" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <text x="405" y="26" font-size="11" font-weight="bold" fill="#0F172A" text-anchor="middle">FinancialsView</text>
+    <text x="405" y="44" font-size="9" fill="#64748B" text-anchor="middle">P&amp;L Charts &amp; Cashflow</text>
+
+    <!-- Crop Doctor -->
+    <rect x="495" y="0" width="150" height="60" rx="4" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <text x="570" y="26" font-size="11" font-weight="bold" fill="#0F172A" text-anchor="middle">CropDoctorView</text>
+    <text x="570" y="44" font-size="9" fill="#64748B" text-anchor="middle">AI Diagnosis + Rx</text>
+
+    <!-- Weather -->
+    <rect x="660" y="0" width="150" height="60" rx="4" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <text x="735" y="26" font-size="11" font-weight="bold" fill="#0F172A" text-anchor="middle">WeatherView</text>
+    <text x="735" y="44" font-size="9" fill="#64748B" text-anchor="middle">7-Day Agro Forecast</text>
+
+    <!-- Market -->
+    <rect x="825" y="0" width="150" height="60" rx="4" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <text x="900" y="26" font-size="11" font-weight="bold" fill="#0F172A" text-anchor="middle">MarketView</text>
+    <text x="900" y="44" font-size="9" fill="#64748B" text-anchor="middle">Mandi Ticker &amp; Trends</text>
+  </g>
+
+  <!-- Service Tier (Injected via providedIn: 'root') -->
+  <rect x="50" y="600" width="1010" height="110" rx="8" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="70" y="625" font-size="12" font-weight="bold" fill="#334155">INJECTABLE SERVICES &amp; HTTP INTERCEPTORS (RxJS Reactive State Store)</text>
+  
+  <g transform="translate(70, 640)">
+    <rect x="0" y="0" width="130" height="50" rx="4" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <text x="65" y="24" font-size="10" font-weight="bold" fill="#174C38" text-anchor="middle">AuthService</text>
+    <text x="65" y="38" font-size="8" fill="#64748B" text-anchor="middle">JWT &amp; Session</text>
+
+    <rect x="145" y="0" width="130" height="50" rx="4" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <text x="210" y="24" font-size="10" font-weight="bold" fill="#174C38" text-anchor="middle">FarmService</text>
+    <text x="210" y="38" font-size="8" fill="#64748B" text-anchor="middle">Parcels &amp; Crops</text>
+
+    <rect x="290" y="0" width="130" height="50" rx="4" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <text x="355" y="24" font-size="10" font-weight="bold" fill="#174C38" text-anchor="middle">InventoryService</text>
+    <text x="355" y="38" font-size="8" fill="#64748B" text-anchor="middle">Stock &amp; Audit</text>
+
+    <rect x="435" y="0" width="130" height="50" rx="4" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <text x="500" y="24" font-size="10" font-weight="bold" fill="#174C38" text-anchor="middle">LabourService</text>
+    <text x="500" y="38" font-size="8" fill="#64748B" text-anchor="middle">Attendance &amp; Wage</text>
+
+    <rect x="580" y="0" width="130" height="50" rx="4" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <text x="645" y="24" font-size="10" font-weight="bold" fill="#174C38" text-anchor="middle">FinancialService</text>
+    <text x="645" y="38" font-size="8" fill="#64748B" text-anchor="middle">Journal &amp; P&amp;L</text>
+
+    <rect x="725" y="0" width="130" height="50" rx="4" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <text x="790" y="24" font-size="10" font-weight="bold" fill="#174C38" text-anchor="middle">AuthInterceptor</text>
+    <text x="790" y="38" font-size="8" fill="#64748B" text-anchor="middle">Bearer Header Injector</text>
+
+    <rect x="870" y="0" width="100" height="50" rx="4" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <text x="920" y="24" font-size="10" font-weight="bold" fill="#174C38" text-anchor="middle">ToastService</text>
+    <text x="920" y="38" font-size="8" fill="#64748B" text-anchor="middle">Alerts</text>
+  </g>
+
+  <!-- Connectors -->
+  <line x1="575" y1="155" x2="575" y2="200" stroke="#0F172A" stroke-width="1.8"/>
+  <line x1="575" y1="250" x2="575" y2="270" stroke="#0F172A" stroke-width="1.8"/>
+  <line x1="265" y1="270" x2="885" y2="270" stroke="#0F172A" stroke-width="1.8"/>
+  <line x1="265" y1="270" x2="265" y2="290" stroke="#0F172A" stroke-width="1.8"/>
+  <line x1="465" y1="270" x2="465" y2="290" stroke="#0F172A" stroke-width="1.8"/>
+  <line x1="675" y1="270" x2="675" y2="290" stroke="#0F172A" stroke-width="1.8"/>
+  <line x1="885" y1="270" x2="885" y2="290" stroke="#0F172A" stroke-width="1.8"/>
+</svg>
