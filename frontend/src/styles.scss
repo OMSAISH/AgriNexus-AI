@@ -1,0 +1,321 @@
+/* AgriNexus AI — Enterprise AgTech Design System & Tokens */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* Brand Color Palette (User Mandate) */
+  --color-forest: #174C38;         /* Primary Brand Forest Green */
+  --color-forest-dark: #0f3526;    /* Dark Forest */
+  --color-forest-light: #1e5e46;   /* Light Forest */
+  --color-emerald: #16845B;        /* Emerald Accent & Active States */
+  --color-emerald-light: #1fad78;  /* Vibrant Emerald */
+  --color-light-sage: #E8F2EA;     /* Light Sage Surface & Highlights */
+  --color-sage-border: #c4decb;    /* Sage Border Token */
+  --color-warm-white: #FAFBF8;     /* Clean AgTech Warm White Surface */
+  --color-neutral-grey: #64748B;   /* Slate/Neutral Grey */
+  --color-dark-text: #172B24;      /* High-Contrast Dominant Text */
+
+  /* Neutral Spectrum */
+  --color-surface-card: #FFFFFF;
+  --color-surface-subtle: #F4F6F2;
+  --color-border: #E2E8F0;
+  --color-border-subtle: #EDF2F7;
+  --color-text-muted: #8292A2;
+  --color-text-secondary: #4A5B53;
+  --color-text-inverse: #FFFFFF;
+
+  /* Status Colors */
+  --color-success: #16845B;
+  --color-success-bg: #E8F7F0;
+  --color-warning: #D97706;
+  --color-warning-bg: #FEF3C7;
+  --color-danger: #DC2626;
+  --color-danger-bg: #FEE2E2;
+  --color-info: #0284C7;
+  --color-info-bg: #E0F2FE;
+
+  /* Typography */
+  --font-family-base: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family-mono: 'JetBrains Mono', monospace;
+
+  /* Elevation Shadows (Subtle, SaaS-grade) */
+  --shadow-xs: 0 1px 2px rgba(23, 43, 36, 0.04);
+  --shadow-sm: 0 2px 4px rgba(23, 43, 36, 0.05);
+  --shadow-md: 0 4px 12px rgba(23, 43, 36, 0.06), 0 1px 3px rgba(23, 43, 36, 0.03);
+  --shadow-lg: 0 10px 25px -4px rgba(23, 43, 36, 0.08), 0 4px 10px -2px rgba(23, 43, 36, 0.03);
+  --shadow-dropdown: 0 12px 30px rgba(23, 43, 36, 0.12);
+
+  /* Radii */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* Spacing Grid */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base Reset & Typography */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-base);
+  background-color: var(--color-warm-white);
+  color: var(--color-dark-text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-neutral-grey);
+}
+
+/* Global Utility Styles */
+.container-fluid {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+a {
+  color: var(--color-emerald);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  &:hover {
+    color: var(--color-forest);
+  }
+}
+
+/* Button Component System */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-family-base);
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  line-height: 1.25;
+
+  &:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  &.btn-primary {
+    background-color: var(--color-forest);
+    color: #ffffff;
+    border-color: var(--color-forest);
+    box-shadow: 0 1px 3px rgba(23, 76, 56, 0.25);
+    &:hover {
+      background-color: var(--color-emerald);
+      border-color: var(--color-emerald);
+      transform: translateY(-1px);
+    }
+  }
+
+  &.btn-secondary {
+    background-color: #ffffff;
+    color: var(--color-dark-text);
+    border-color: var(--color-border);
+    box-shadow: var(--shadow-xs);
+    &:hover {
+      background-color: var(--color-light-sage);
+      border-color: var(--color-emerald);
+      color: var(--color-forest);
+    }
+  }
+
+  &.btn-outline {
+    background-color: transparent;
+    color: var(--color-forest);
+    border-color: var(--color-forest);
+    &:hover {
+      background-color: var(--color-forest);
+      color: #ffffff;
+    }
+  }
+
+  &.btn-danger {
+    background-color: var(--color-danger);
+    color: #ffffff;
+    &:hover {
+      background-color: #b91c1c;
+    }
+  }
+
+  &.btn-sm {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    border-radius: var(--radius-sm);
+  }
+
+  &.btn-lg {
+    padding: 0.85rem 1.75rem;
+    font-size: 1rem;
+    border-radius: var(--radius-lg);
+  }
+
+  &.btn-icon {
+    padding: 0.5rem;
+    border-radius: var(--radius-sm);
+  }
+}
+
+/* Card Tokens */
+.agri-card {
+  background: var(--color-surface-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-6);
+  position: relative;
+  transition: box-shadow var(--transition-fast), border-color var(--transition-fast);
+
+  &:hover {
+    border-color: #cbd5e1;
+  }
+
+  &.agri-card-elevated {
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+/* Badge Tokens */
+.agri-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1;
+
+  &.badge-forest {
+    background: var(--color-forest);
+    color: #ffffff;
+  }
+
+  &.badge-success {
+    background: var(--color-success-bg);
+    color: var(--color-success);
+    border: 1px solid var(--color-sage-border);
+  }
+
+  &.badge-warning {
+    background: var(--color-warning-bg);
+    color: var(--color-warning);
+    border: 1px solid #fde68a;
+  }
+
+  &.badge-danger {
+    background: var(--color-danger-bg);
+    color: var(--color-danger);
+    border: 1px solid #fca5a5;
+  }
+
+  &.badge-info {
+    background: var(--color-info-bg);
+    color: var(--color-info);
+    border: 1px solid #bae6fd;
+  }
+
+  &.badge-neutral {
+    background: var(--color-light-sage);
+    color: var(--color-forest);
+    border: 1px solid var(--color-sage-border);
+  }
+}
+
+/* Form Controls */
+.form-group {
+  margin-bottom: var(--space-4);
+
+  label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--color-dark-text);
+    margin-bottom: 0.35rem;
+  }
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  font-family: var(--font-family-base);
+  font-size: 0.9rem;
+  color: var(--color-dark-text);
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+
+  &:focus {
+    outline: none;
+    border-color: var(--color-emerald);
+    box-shadow: 0 0 0 3px rgba(22, 132, 91, 0.15);
+  }
+
+  &::placeholder {
+    color: var(--color-text-muted);
+  }
+
+  &:disabled {
+    background: #f1f5f9;
+    cursor: not-allowed;
+  }
+}
+
+/* Code & Preformatted */
+code, pre {
+  font-family: var(--font-family-mono);
+}
